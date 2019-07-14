@@ -26,7 +26,7 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container mt-2">
     <h1 class="text-center d-none d-md-block">Ask a Pig!</h1>
     @yield('content')
 </div>

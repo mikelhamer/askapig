@@ -14,7 +14,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::all();
+        $questions = Question::all()->sortByDesc('created_at');
         return view('index', compact('questions'));
     }
 
@@ -31,12 +31,22 @@ class QuestionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => ['required', 'min:5', 'endsWith:?'],
+            'body' => ['required', 'min:5'],
+        ]);
+        $question = new Question([
+            'title' => $request->get('title'),
+            'body' => $request->get('body'),
+        ]);
+        $question->save();
+        return redirect()->route('questions.index')->with('success', 'Thanks for asking!');
     }
 
     /**

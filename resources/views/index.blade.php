@@ -1,6 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
+    @if(session()->get('success'))
+        <div class="alert alert-success">
+            {{session()->get('success')}}
+        </div>
+    @endif
     <div class="d-flex justify-content-center justify-content-md-end align-items-center px-3">
         <a href="{{route('questions.create')}}" class="btn btn-success btn-lg">Ask Question</a>
     </div>
