@@ -27,7 +27,11 @@
     </div>
 </nav>
 <div class="container mt-2">
-    <h1 class="text-center d-none d-md-block">Ask a Pig!</h1>
+    <div class="text-center display-3 d-none d-md-flex align-items-center justify-content-lg-center">
+        <img src="{{asset('images/pig.png')}}" width="50" height="50" class="d-inline-block" alt="">
+        <span class="mx-2">Ask a Pig!</span>
+        <img src="{{asset('images/pig.png')}}" width="50" height="50" class="d-inline-block" alt="">
+    </div>
     @yield('content')
 </div>
 </body>
