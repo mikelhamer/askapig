@@ -25,7 +25,9 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('questions-create');
+        $placeholders = ['Why do pigs like to roll around in the mud?', 'Do you speak Pig Latin?'];
+        $randomPlaceholder = $placeholders[array_rand($placeholders)];
+        return view('questions-create', compact('randomPlaceholder'));
     }
 
     /**

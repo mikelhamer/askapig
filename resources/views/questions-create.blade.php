@@ -17,7 +17,7 @@
             @csrf
             <div class="form-group">
                 <label for="title" class="font-weight-bold">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{old('title')}}">
+                <input type="text" class="form-control" id="title" name="title" placeholder="{{$randomPlaceholder}}" value="{{old('title')}}">
             </div>
             <div class="form-group">
                 <label for="body" class="font-weight-bold">Body</label>
