@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="d-flex justify-content-center justify-content-md-end align-items-center px-3">
-        <a href="" class="btn btn-success btn-lg">Ask Question</a>
+        <a href="{{route('questions.create')}}" class="btn btn-success btn-lg">Ask Question</a>
     </div>
     <div class="mt-2">
     @foreach($questions->all() as $question)
