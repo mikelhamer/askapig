@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+use Illuminate\Support\Facades\Route;
+
+Route::redirect('/', 'questions');
+
+Route::resource('questions', 'QuestionController');

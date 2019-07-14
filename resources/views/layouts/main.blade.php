@@ -5,7 +5,7 @@
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('css/app.css')}}"/>
-    <script src="{{asset('js/app.js')}}" ></script>
+    <script src="{{asset('js/app.js')}}"></script>
     <title>Ask a Pig!</title>
 </head>
 <body>
@@ -14,10 +14,11 @@
         <img src="{{asset('images/pig.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
         Ask a Pig!
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Questions</a>
             <a class="nav-item nav-link" href="#">Random Question</a>
@@ -26,6 +27,7 @@
     </div>
 </nav>
 <div class="container">
+    <h1 class="text-center">Welcome to Ask a Pig!</h1>
     @yield('content')
 </div>
 </body>
