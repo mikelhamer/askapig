@@ -21,9 +21,10 @@
             </div>
             <div class="form-group">
                 <label for="body" class="font-weight-bold">Body</label>
-                <textarea rows="7" class="form-control" id="body" name="body" placeholder="Body">{{old('body')}}</textarea>
+                <textarea rows="7" class="form-control" id="body" name="body" placeholder="Elaborate a little">{{old('body')}}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 @endsection
+    

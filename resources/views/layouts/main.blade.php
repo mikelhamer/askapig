@@ -20,7 +20,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{{route('questions.index')}}">Questions</a>
+            <a class="nav-item nav-link active" href="{{route('questions.index')}}">Home</a>
             <a class="nav-item nav-link" href="#">Random Question</a>
             <a class="nav-item nav-link" href="#">Pig FAQS</a>
         </div>

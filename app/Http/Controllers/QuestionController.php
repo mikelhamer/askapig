@@ -50,7 +50,7 @@ class QuestionController extends Controller
     {
         $this->validate($request, [
             'title' => ['required', 'min:5', 'endsWith:?'],
-            'body' => ['required', 'min:5'],
+            'body' => ['required', 'min:10'],
         ]);
         $question = new Question([
             'title' => $request->get('title'),
