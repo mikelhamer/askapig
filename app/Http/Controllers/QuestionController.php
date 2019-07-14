@@ -27,7 +27,14 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        $placeholders = ['Why do pigs like to roll around in the mud?', 'Do you speak Pig Latin?'];
+        $placeholders = [
+            'Why do pigs like to roll around in the mud?',
+            'Do you speak Pig Latin?',
+            'What\'s your opinion on Porky Pig?',
+            'Do pigs like pineapples?',
+            'Are you scared of the big bad wolf?',
+            'Have you ever had the swine flu?',
+            'Why did the pig cross the road?'];
         $randomPlaceholder = $placeholders[array_rand($placeholders)];
         return view('questions-create', compact('randomPlaceholder'));
     }
