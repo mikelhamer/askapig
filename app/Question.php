@@ -9,7 +9,7 @@ class Question extends Model
     protected $fillable = ['title', 'body'];
 
     public function answers() {
-        return $this->hasMany('App\Answer');
+        return $this->hasMany('App\Answer')->orderBy('created_at');
     }
 
 }

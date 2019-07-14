@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use App\Question;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -60,7 +62,27 @@ class QuestionController extends Controller
     public function show($id)
     {
         $question = Question::find($id);
-        return view('questions-show', compact('question'));
+        $answersCountText = count($question->answers) . ' ' . Str::plural('Answer', count($question->answers));
+        return view('questions-show', compact(['question', 'answersCountText']));
+    }
+
+    /**
+     * Store a newly created answer in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function saveAnswer(Request $request, $id) {
+        $question = Question::findOrFail($id);
+        $this->validate($request, [
+            'answer' => ['required', 'min:5'],
+        ]);
+        $answer = new Answer([
+            'body' => $request->get('answer'),
+        ]);
+        $question->answers()->save($answer);
+        return redirect()->route('questions.show', ['id' => $question->id])->with('success', 'Thanks for answering!');
     }
 
     /**

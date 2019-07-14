@@ -15,4 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', 'questions');
 
+
 Route::resource('questions', 'QuestionController');
+
+Route::post('questions/{id}/answers', [
+    'as' => 'questions.answers.save', 'uses' => 'QuestionController@saveAnswer'
+]);
