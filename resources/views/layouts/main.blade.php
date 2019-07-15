@@ -21,7 +21,8 @@
     <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav">
             <a class="nav-item nav-link {{Route::currentRouteNamed('questions.index') ? 'active' : ''}}" href="{{route('questions.index')}}">Home</a>
-            <a class="nav-item nav-link" href="{{route('questions.random')}}">Random Question</a>
+            <a class="nav-item nav-link {{Route::currentRouteNamed('questions.create') ? 'active' : ''}}" href="{{route('questions.create')}}">Ask a Question</a>
+            <a class="nav-item nav-link {{Route::currentRouteNamed('questions.random')}}" href="{{route('questions.random')}}">Random Question</a>
         </div>
     </div>
 </nav>

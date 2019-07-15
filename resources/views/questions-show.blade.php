@@ -21,6 +21,7 @@
         </div>
         <div>
             @if(!$question->answers->isEmpty())
+                <hr>
                 <div class="card">
                     <div class="card-header bg-success text-white">
                         <div class="card-title"><h2>{{$answersCountText}}</h2></div>
@@ -42,7 +43,7 @@
                     </div>
                 </div>
             @endif
-            <div class="mt-4">
+            <div class="mt-4 mb-2">
                 <h3>Are you a pig? Answer!</h3>
                 @if ($errors->any())
                     <div class="alert alert-danger">

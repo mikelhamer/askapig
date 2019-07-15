@@ -81,7 +81,11 @@ class QuestionController extends Controller
     public function showRandom()
     {
         $question = Question::inRandomOrder()->first();
-        return $this->show($question->id);
+        if ($question) {
+            return $this->show($question->id);
+        } else {
+            return redirect(route('questions.index'));
+        }
     }
 
     /**
