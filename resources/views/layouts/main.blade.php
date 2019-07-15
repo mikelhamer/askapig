@@ -20,9 +20,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarContent">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{{route('questions.index')}}">Home</a>
-            <a class="nav-item nav-link" href="#">Random Question</a>
-            <a class="nav-item nav-link" href="#">Pig FAQS</a>
+            <a class="nav-item nav-link {{Route::currentRouteNamed('questions.index') ? 'active' : ''}}" href="{{route('questions.index')}}">Home</a>
+            <a class="nav-item nav-link" href="{{route('questions.random')}}">Random Question</a>
         </div>
     </div>
 </nav>

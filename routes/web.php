@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', 'questions');
 
+Route::get('questions/random', [
+    'as' => 'questions.random', 'uses' => 'QuestionController@showRandom'
+]);
 
 Route::resource('questions', 'QuestionController');
 

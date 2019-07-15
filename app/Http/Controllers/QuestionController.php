@@ -68,9 +68,20 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $question = Question::find($id);
+        $question = Question::findOrFail($id);
         $answersCountText = count($question->answers) . ' ' . Str::plural('Answer', count($question->answers));
         return view('questions-show', compact(['question', 'answersCountText']));
+    }
+
+    /**
+     * Display a random resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRandom()
+    {
+        $question = Question::inRandomOrder()->first();
+        return $this->show($question->id);
     }
 
     /**
